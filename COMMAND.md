@@ -2,6 +2,9 @@
 ```
 jj git clone URL
 jj desc -m "MESSAGE"
+jj new
+jj new BASE
+jj edit TARGET
 ```
 
 # Existing Branch
@@ -21,4 +24,11 @@ jj git push --named BRANCH=@
 jj rebase -s SOURCE -d DESTINATION
 jj bookmark set DESTINATION -r SOURCE
 jj git push -b DESTINATION
+```
+
+# Rebase after PR
+```
+jj git fetch
+jj rebase -d SOURCE@REMOTE -d DESTINATION
+jj git push -b DESTINATION --force
 ```
