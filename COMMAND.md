@@ -29,12 +29,12 @@ jj p DESTINATION --force
 
 # Alias (~/.config/jj/config.toml)
 ```
+n = ["new"]
+e = ["edit"]
 i = ["git", "init"]
 c = ["git", "clone"]
 f = ["git", "fetch"]
-p = ["util", "exec", "--", "bash", "-c", "jj b s $1 && jj git push -b $1 $2", ""]
 d = ["desc", "-m"]
-n = ["new"]
-e = ["edit"]
+p = ["util", "exec", "--", "bash", "-c", "jj b s $1 && jj git push -b $1 $2", ""]
 r = ["util", "exec", "--", "bash", "-c", "jj b s $2 && jj rebase -o $1@origin", ""]
 ```
