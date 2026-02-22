@@ -14,6 +14,8 @@ jj n
 jj n BASE
 jj e TARGET
 jj c "MESSAGE"
+jj a TARGET
+jj u
 ```
 
 # Create and Push Branch
@@ -30,6 +32,8 @@ jj p DESTINATION --force
 
 # Alias (~/.config/jj/config.toml)
 ```
+a = ["abandon"]
+u = ["undo"]
 n = ["new"]
 e = ["edit"]
 d = ["desc", "-m"]
@@ -37,6 +41,6 @@ c = ["ci", "-m"]
 i = ["git", "init"]
 cl = ["git", "clone"]
 f = ["git", "fetch"]
-p = ["util", "exec", "--", "bash", "-c", "jj b s $1 && jj git push -b $1 $2", ""]
+p = ["util", "exec", "--", "bash", "-c", "jj b s $1 && jj git push -b $1", ""]
 r = ["util", "exec", "--", "bash", "-c", "jj b s $2 && jj rebase -o $1@origin", ""]
 ```
