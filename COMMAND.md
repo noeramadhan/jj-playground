@@ -1,7 +1,7 @@
 # Init
 ```
-jj git init
-jj git clone URL
+jj init
+jj clone URL
 
 jj config set --user user.name "Your Name"
 jj config set --user user.email "your@email.com"
@@ -9,7 +9,7 @@ jj config set --user user.email "your@email.com"
 
 # Changes
 ```
-jj desc -m "MESSAGE"
+jj d "MESSAGE"
 jj new
 jj new BASE
 jj edit TARGET
@@ -17,8 +17,7 @@ jj edit TARGET
 
 # Create and Push Branch, Step-by-Step
 ```
-jj b s BRANCH
-jj git push -b BRANCH
+jj push BRANCH
 ```
 
 # Create and Push Branch, for New Branch
@@ -36,8 +35,7 @@ jj git push -b DESTINATION
 # Rebase. Current Branch
 ```
 jj rebase -o SOURCE
-jj b s BRANCH
-jj git push -b BRANCH
+jj push BRANCH
 ```
 
 # Rebase after PR, Everywhere
@@ -54,4 +52,13 @@ jj git fetch
 jj rebase -o SOURCE@REMOTE
 jj b s DESTINATION
 jj git push -b DESTINATION --force
+```
+
+# Alias (~/.config/jj/config.toml)
+```
+init = ["git", "init"]
+clone = ["git", "clone"]
+fetch = ["git", "fetch"]
+push = ["util", "exec", "--", "bash", "-c", "jj b s $1 && jj git push -b $1", ""]
+d = ["desc", "-m"]
 ```
