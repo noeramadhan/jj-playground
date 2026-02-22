@@ -1,11 +1,14 @@
-# Basic
+# Init
 ```
-jj git init --colocate
+jj git init
 jj git clone URL
 
 jj config set --user user.name "Your Name"
 jj config set --user user.email "your@email.com"
+```
 
+# Changes
+```
 jj desc -m "MESSAGE"
 jj new
 jj new BASE
