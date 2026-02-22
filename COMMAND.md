@@ -21,7 +21,7 @@ jj b s BRANCH
 jj git push -b BRANCH
 ```
 
-# Create and Push Branch, The Gucci Way for New Branch
+# Create and Push Branch, for New Branch
 ```
 jj git push --named BRANCH=@
 ```
