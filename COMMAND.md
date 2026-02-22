@@ -13,6 +13,7 @@ jj d "MESSAGE"
 jj n
 jj n BASE
 jj e TARGET
+jj c
 ```
 
 # Create and Push Branch
@@ -31,10 +32,11 @@ jj p DESTINATION --force
 ```
 n = ["new"]
 e = ["edit"]
+d = ["desc", "-m"]
+c = ["ci", "-m"]
 i = ["git", "init"]
 c = ["git", "clone"]
 f = ["git", "fetch"]
-d = ["desc", "-m"]
 p = ["util", "exec", "--", "bash", "-c", "jj b s $1 && jj git push -b $1 $2", ""]
 r = ["util", "exec", "--", "bash", "-c", "jj b s $2 && jj rebase -o $1@origin", ""]
 ```
