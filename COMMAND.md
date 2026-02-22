@@ -18,7 +18,6 @@ jj edit TARGET
 # Create and Push Branch, Step-by-Step
 ```
 jj b s BRANCH
-jj b t BRANCH --remote=origin
 jj git push -b BRANCH
 ```
 
