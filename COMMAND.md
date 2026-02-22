@@ -1,7 +1,7 @@
 # Init
 ```
-jj init
-jj clone URL
+jj i
+jj c URL
 
 jj config set --user user.name "Your Name"
 jj config set --user user.email "your@email.com"
@@ -10,55 +10,31 @@ jj config set --user user.email "your@email.com"
 # Changes
 ```
 jj d "MESSAGE"
-jj new
-jj new BASE
-jj edit TARGET
+jj n
+jj n BASE
+jj e TARGET
 ```
 
-# Create and Push Branch, Step-by-Step
+# Create and Push Branch
 ```
-jj push BRANCH
-```
-
-# Create and Push Branch, for New Branch
-```
-jj git push --named BRANCH=@
+jj p BRANCH
 ```
 
-# Merge, Well, It's a Rebase, Everywhere
+# Rebase
 ```
-jj rebase -s SOURCE -d DESTINATION
-jj b s DESTINATION -r SOURCE
-jj git push -b DESTINATION
-```
-
-# Rebase. Current Branch
-```
-jj rebase -o SOURCE
-jj push BRANCH
-```
-
-# Rebase after PR, Everywhere
-```
-jj git fetch
-jj rebase -s SOURCE@REMOTE -d DESTINATION
-jj b s DESTINATION
-jj git push -b DESTINATION --force
-```
-
-# Rebase after PR, Current Branch
-```
-jj git fetch
-jj rebase -o SOURCE@REMOTE
-jj b s DESTINATION
-jj git push -b DESTINATION --force
+jj f
+jj r SOURCE DESTINATION 
+jj p DESTINATION --force
 ```
 
 # Alias (~/.config/jj/config.toml)
 ```
-init = ["git", "init"]
-clone = ["git", "clone"]
-fetch = ["git", "fetch"]
-push = ["util", "exec", "--", "bash", "-c", "jj b s $1 && jj git push -b $1", ""]
+i = ["git", "init"]
+c = ["git", "clone"]
+f = ["git", "fetch"]
+p = ["util", "exec", "--", "bash", "-c", "jj b s $1 && jj git push -b $1 $2", ""]
 d = ["desc", "-m"]
+n = ["new"]
+e = ["edit"]
+r = ["util", "exec", "--", "bash", "-c", "jj b s $2 && jj rebase -o $1@origin", ""]
 ```
