@@ -37,15 +37,15 @@ jj git push -b DESTINATION
 # Rebase. Current Branch
 ```
 jj rebase -o SOURCE
-- jj b s BRANCH
-jj git push --named BRANCH=@
-- jj git push -b BRANCH
+jj b s BRANCH
+jj git push -b BRANCH
 ```
 
 # Rebase after PR, Everywhere
 ```
 jj git fetch
 jj rebase -s SOURCE@REMOTE -d DESTINATION
+jj b s DESTINATION
 jj git push -b DESTINATION --force
 ```
 
@@ -53,5 +53,6 @@ jj git push -b DESTINATION --force
 ```
 jj git fetch
 jj rebase -o SOURCE@REMOTE
+jj b s DESTINATION
 jj git push -b DESTINATION --force
 ```
