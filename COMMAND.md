@@ -19,7 +19,7 @@ jj b t BRANCH --remote=origin
 jj git push -b BRANCH
 ```
 
-# Create and Push Branch, The Gucci Way
+# Create and Push Branch, The Gucci Way for New Branch
 ```
 jj git push --named BRANCH=@
 ```
